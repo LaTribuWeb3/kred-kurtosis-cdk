@@ -463,7 +463,7 @@ WriteTimeout = "1m0s"
 # load balancer and several RPCs, it's possible that a user might be
 # rate limited on just one of them
 # ------------------------------------------------------------------------------
-MaxRequestsPerIPAndSecond = 50
+MaxRequestsPerIPAndSecond = 500
 
 # ------------------------------------------------------------------------------
 # SequencerNodeURI if configured will cause the RPC to relay certain
@@ -508,7 +508,7 @@ BatchRequestsEnabled = true
 # BatchRequestsLimit will determine the max number of requests to be
 # supported in a single batch request
 # ------------------------------------------------------------------------------
-BatchRequestsLimit = 50
+BatchRequestsLimit = 500
 
 # ------------------------------------------------------------------------------
 # L2Coinbase is used to configure the response from the RPC for an

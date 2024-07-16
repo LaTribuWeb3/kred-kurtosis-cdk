@@ -14,3 +14,4 @@ apt install -y kurtosis-cli=0.89.18
 
 kurtosis clean --all
 # kurtosis run --enclave cdk-v1 --args-file params.yml --image-download always .
+# kurtosis run --enclave cdk-v1 --args-file no-blockscout-params.yml --image-download always .
