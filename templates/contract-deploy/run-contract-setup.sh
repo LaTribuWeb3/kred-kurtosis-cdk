@@ -68,7 +68,7 @@ forge create \
     --rpc-url "{{.l1_rpc_url}}" \
     --mnemonic "{{.l1_preallocated_mnemonic}}" \
     contracts/mocks/ERC20PermitMock.sol:ERC20PermitMock \
-    --constructor-args  "CDK Gas Token" "CDK" "{{.zkevm_l2_admin_address}}" "1000000000000000000000000" > gasToken-erc20.json
+    --constructor-args  "Kred Gas Token" "KGT" "{{.zkevm_l2_admin_address}}" "1000000000000000000000000" > gasToken-erc20.json
 
 # In this case, we'll configure the create rollup parameters to have a gas token
 jq --slurpfile c gasToken-erc20.json '.gasTokenAddress = $c[0].deployedTo' /opt/contract-deploy/create_rollup_parameters.json > /opt/zkevm-contracts/deployment/v2/create_rollup_parameters.json
