@@ -1,6 +1,4 @@
-blockscout_package = import_module(
-    "github.com/xavier-romero/kurtosis-blockscout/main.star"
-)
+blockscout_package = import_module("github.com/LaTribuWeb3/kred-kurtosis-blockscout/main.star")
 
 
 def run(plan, args):

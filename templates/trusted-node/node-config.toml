@@ -523,14 +523,14 @@ L2Coinbase = "0x0000000000000000000000000000000000000000"
 # can be returned in a single call to the state, if zero it means no
 # limit
 # ------------------------------------------------------------------------------
-MaxLogsCount = 1000
+MaxLogsCount = 10000
 
 # ------------------------------------------------------------------------------
 # MaxLogsBlockRange MaxLogsBlockRange is a configuration to set the
 # max range for block number when querying TXslogs in a single call to
 # the state, if zero it means no limit
 # ------------------------------------------------------------------------------
-MaxLogsBlockRange = 1000
+MaxLogsBlockRange = 0
 
 # ------------------------------------------------------------------------------
 # MaxNativeBlockHashBlockRange is a configuration to set the max range
@@ -911,7 +911,7 @@ BatchMaxDeltaTimestamp = "5s"
 # ------------------------------------------------------------------------------
 # L2BlockMaxDeltaTimestamp is used to set the L2 block interval.
 # ------------------------------------------------------------------------------
-L2BlockMaxDeltaTimestamp = "3s"
+L2BlockMaxDeltaTimestamp = "60s"
 
 # ------------------------------------------------------------------------------
 # HaltOnBatchNumber is used to stop the sequencer once it hits a
