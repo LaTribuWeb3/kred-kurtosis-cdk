@@ -26,9 +26,6 @@ deploy_cdk_erigon_node: true
 # Deploy observability stack.
 deploy_observability: true
 
-# Deploy Blockscout stack.
-deploy_l2_blockscout: false
-
 # Deploy eth load balancer.
 deploy_blutgang: false
 
@@ -84,7 +81,6 @@ args:
   zkevm_bridge_ui_port: 80
   zkevm_agglayer_port: 4444
   zkevm_dac_port: 8484
-  blockscout_public_port: 50101
 
   # Addresses and private keys of the different components.
   # They have been generated using the following command:
