@@ -20,8 +20,8 @@ echo "export L1_RPC_URL=http://$ip_address:$l1_port"
 echo "export L2_RPC_URL=http://$ip_address:$l2_port"
 EOF
 
-# Transfer the script to the remote host
-scp $TEMP_SCRIPT $HOSTNAME:/tmp/get_rpc_url.sh
+# Transfer the script to the remote host, silencing the output
+scp -q $TEMP_SCRIPT $HOSTNAME:/tmp/get_rpc_url.sh
 
 # Execute the script on the remote host, suppressing stderr and skipping the banner
 ssh -o LogLevel=ERROR $HOSTNAME 'bash /tmp/get_rpc_url.sh' 2>/dev/null
