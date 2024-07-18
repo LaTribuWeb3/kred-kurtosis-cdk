@@ -1,5 +1,6 @@
 docker run \
   -p 443:443 \
+  -p 80:80 \
   -v ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg \
   -v ./certwprivkey.pem:/usr/local/etc/haproxy/certwprivkey.pem \
   -e PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
