@@ -10,5 +10,6 @@ docker run \
   -it \
   --hostname zkevm-bridge-proxy-001-no-bs \
   --name manual-proxy \
+  --rm \
   haproxy:2.9.7 \
   haproxy -f /usr/local/etc/haproxy/haproxy.cfg
