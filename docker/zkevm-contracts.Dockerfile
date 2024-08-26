@@ -1,3 +1,7 @@
+# RUN WITH 'docker build . --tag zkevm-contracts:fork9 --build-arg ZKEVM_CONTRACTS_BRANCH=replace-v2 --build-arg POLYCLI_VERSION=main --file zkevm-contracts.Dockerfile'
+# TO PUBLISH, FIRST RETAG: docker tag <IMAGE_ID> <DOCKER HUB ID>/zkevm-contracts:fork9
+# THEN PUSH: docker push <DOCKER HUB ID>/zkevm-contracts:fork9
+
 FROM golang:1.21 AS polycli-builder
 ARG POLYCLI_VERSION
 WORKDIR /opt/polygon-cli
@@ -14,7 +18,7 @@ ARG ZKEVM_CONTRACTS_BRANCH
 WORKDIR /opt/zkevm-contracts
 # FIX: `npm install` randomly fails with ECONNRESET and ETIMEDOUT errors by installing npm>=10.5.1.
 # https://github.com/npm/cli/releases/tag/v10.5.1
-RUN git clone --branch ${ZKEVM_CONTRACTS_BRANCH} https://github.com/0xPolygonHermez/zkevm-contracts . \
+RUN git clone --branch ${ZKEVM_CONTRACTS_BRANCH} https://github.com/LaTribuWeb3/kred-zkevm-contracts . \
   && npm install --global npm@10.6.0 \
   && npm install \
   && npx hardhat compile
