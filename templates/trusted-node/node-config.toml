@@ -1054,7 +1054,7 @@ WaitPeriodSendSequence = "5m"
 # LastBatchVirtualizationTimeMaxWaitPeriod since the last time we've
 # virtualized, we'll send the sequences. Otherwise we'll wait longer.
 # ------------------------------------------------------------------------------
-LastBatchVirtualizationTimeMaxWaitPeriod = "5s"
+LastBatchVirtualizationTimeMaxWaitPeriod = "5m"
 
 # ------------------------------------------------------------------------------
 # L1BlockTimestampMargin is the duration that must exist between the
