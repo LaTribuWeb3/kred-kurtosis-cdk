@@ -6,7 +6,6 @@ cdk_central_environment_package = "./cdk_central_environment.star"
 cdk_bridge_infra_package = "./cdk_bridge_infra.star"
 zkevm_permissionless_node_package = "./zkevm_permissionless_node.star"
 observability_package = "./observability.star"
-blockscout_package = "./blockscout.star"
 workload_package = "./workload.star"
 blutgang_package = "./cdk_blutgang.star"
 cdk_erigon_package = import_module("./cdk_erigon.star")
@@ -22,7 +21,6 @@ def run(
     deploy_zkevm_permissionless_node=True,
     deploy_cdk_erigon_node=False,
     deploy_observability=True,
-    deploy_l2_blockscout=False,
     deploy_blutgang=False,
     apply_workload=False,
     args={},
@@ -37,7 +35,6 @@ def run(
         deploy_cdk_bridge_infra(bool): Deploy cdk/bridge infrastructure.
         deploy_zkevm_permissionless_node(bool): Deploy permissionless node.
         deploy_observability(bool): Deploys observability stack.
-        deploy_l2_blockscout(bool): Deploys Blockscout stack.
         args(json): Configures other aspects of the environment.
     Returns:
         A full deployment of Polygon CDK.
@@ -158,13 +155,6 @@ def run(
         import_module(observability_package).run(plan, observability_args)
     else:
         plan.print("Skipping the deployment of the observability stack")
-
-    # Deploy observability stack
-    if deploy_l2_blockscout:
-        plan.print("Deploying Blockscout stack")
-        import_module(blockscout_package).run(plan, args)
-    else:
-        plan.print("Skipping the deployment of Blockscout stack")
 
     # Apply workload
     if apply_workload:
