@@ -1045,7 +1045,7 @@ Level = "info"
 # we checked. E.g. if we query and find 0 sequences to send, we'll
 # wait for WaitPeriodSendSequence before checking again
 # ------------------------------------------------------------------------------
-WaitPeriodSendSequence = "5m"
+WaitPeriodSendSequence = "1m"
 
 # ------------------------------------------------------------------------------
 # LastBatchVirtualizationTimeMaxWaitPeriod defines the max amount of
@@ -1054,7 +1054,7 @@ WaitPeriodSendSequence = "5m"
 # LastBatchVirtualizationTimeMaxWaitPeriod since the last time we've
 # virtualized, we'll send the sequences. Otherwise we'll wait longer.
 # ------------------------------------------------------------------------------
-LastBatchVirtualizationTimeMaxWaitPeriod = "5s"
+LastBatchVirtualizationTimeMaxWaitPeriod = "30m"
 
 # ------------------------------------------------------------------------------
 # L1BlockTimestampMargin is the duration that must exist between the
@@ -1062,7 +1062,7 @@ LastBatchVirtualizationTimeMaxWaitPeriod = "5s"
 # virtualizing. If the time of the last L1 block and the last L2 block
 # is too close, we'll wait longer before attempting to sequence.
 # ------------------------------------------------------------------------------
-L1BlockTimestampMargin = "30s"
+L1BlockTimestampMargin = "1m"
 
 # ------------------------------------------------------------------------------
 # MaxTxSizeForL1 is the maximum size a single transaction can
