@@ -3,7 +3,7 @@
 # The deployment process is divided into various stages.
 
 # Deploy local L1.
-deploy_l1: true
+deploy_l1: false
 
 # Deploy zkevm contracts on L1 (and also fund accounts).
 deploy_zkevm_contracts_on_l1: true
@@ -55,7 +55,7 @@ args:
   zkevm_da_image: 0xpolygon/cdk-data-availability:0.0.7
   # zkevm_da_image: 0xpolygon/cdk-data-availability:0.0.6
 
-  zkevm_contracts_image: leovct/zkevm-contracts # the tag is automatically replaced by the value of /zkevm_rollup_fork_id/
+  zkevm_contracts_image: alfulinku/zkevm-contracts # the tag is automatically replaced by the value of /zkevm_rollup_fork_id/
 
   # zkevm_agglayer_image: 0xpolygon/agglayer:0.1.3
   zkevm_agglayer_image: ghcr.io/agglayer/agglayer-rs:main
@@ -118,7 +118,7 @@ args:
   zkevm_l2_keystore_password: pSnv6Dh5s9ahuzGzH9RoCDrKAMddaX3m
 
   ## L1 configuration.
-  l1_chain_id: 271828
+  l1_chain_id: 11155111
   l1_preallocated_mnemonic: grocery cruise dance huge gentle punch obscure cook offer pet exhibit weather
   l1_funding_amount: 0.003ether
   l1_rpc_url:
@@ -156,7 +156,7 @@ args:
   # # The address of the Polygon data committee contract on L1.
   # polygon_data_committee_address: ""
 
-  polygon_zkevm_explorer: https://explorer.private/
+  polygon_zkevm_explorer: https://explorer.sepkred.la-tribu.xyz/
   l1_explorer_url: https://sepolia.etherscan.io/
 
   # If this is true, we will automatically deploy an ERC20 contract on
