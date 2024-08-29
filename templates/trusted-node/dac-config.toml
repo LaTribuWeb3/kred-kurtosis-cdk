@@ -1,8 +1,8 @@
 PrivateKey = {Path = "/etc/zkevm/dac.keystore", Password = "{{.zkevm_l2_keystore_password}}"}
 
 [L1]
-WsURL = "{{.l1_ws_url}}"
-RpcURL = "{{.l1_rpc_url}}"
+WsURL = "{{.l1_ws_url.dac_config_toml}}"
+RpcURL = "{{.l1_rpc_url.dac_config_toml}}"
 PolygonValidiumAddress = "{{.zkevm_rollup_address}}"
 DataCommitteeAddress = "{{.polygon_data_committee_address}}"
 Timeout = "1m"

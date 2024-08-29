@@ -61,7 +61,7 @@ GlobalQueue = 1024
         MaxConns = 200
 
 [Etherman]
-URL = "{{.l1_rpc_url}}"
+URL = "{{.l1_rpc_url.node_config_toml}}"
 ForkIDChunkSize = 20000
 MultiGasProvider = false
         [Etherscan]

@@ -13,7 +13,7 @@ Port = "{{.bridge_db.port}}"
 MaxConns = 20
 
 [Etherman]
-l1URL = "{{.l1_rpc_url}}"
+l1URL = "{{.l1_rpc_url.bridge_config_toml }}"
 L2URLs = ["http://{{.l2_rpc_name}}{{.deployment_suffix}}:{{.zkevm_rpc_http_port}}"]
 
 [Synchronizer]

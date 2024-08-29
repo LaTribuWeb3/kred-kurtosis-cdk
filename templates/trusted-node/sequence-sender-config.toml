@@ -29,7 +29,7 @@ MaxPendingTx = 1
 		MaxGasPriceLimit = 0
 		PersistenceFilename = "/app/data/ethtxmanager.json"
 			[SequenceSender.EthTxManager.Etherman]
-				URL = "{{.l1_rpc_url}}"
+				URL = "{{.l1_rpc_url.sequence_sender_config_toml}}"
 				MultiGasProvider = false
 				L1ChainID =  {{.l1_chain_id}}
 				HTTPHeaders = []

@@ -39,7 +39,7 @@ KMSKeyName = "" # Disable for local
 
 [L1]
 ChainID = {{.l1_chain_id}}
-NodeURL = "{{.l1_rpc_url}}"
+NodeURL = "{{.l1_rpc_url.agglayer_config_toml}}"
 RollupManagerContract = "{{.zkevm_rollup_manager_address}}"
 
 [Telemetry]

@@ -121,8 +121,14 @@ args:
   l1_chain_id: 271828
   l1_preallocated_mnemonic: grocery cruise dance huge gentle punch obscure cook offer pet exhibit weather
   l1_funding_amount: 0.003ether
-  l1_rpc_url: https://sepolia.infura.io/v3/526fd9522cab462ba37dd09c8a9fc3e7
-  l1_ws_url: wss://sepolia.infura.io/ws/v3/526fd9522cab462ba37dd09c8a9fc3e7
+  l1_rpc_url:
+    bridge_config_toml: https://ethereum-sepolia-rpc.publicnode.com/
+    agglayer_config_toml: https://ethereum-sepolia-rpc.publicnode.com/
+    dac_config_toml: https://ethereum-sepolia-rpc.publicnode.com/
+    node_config_toml: https://ethereum-sepolia-rpc.publicnode.com/
+    sequence_sender_config_toml: https://ethereum-sepolia-rpc.publicnode.com/
+  l1_ws_url:
+    dac_config_toml: wss://ethereum-sepolia-rpc.publicnode.com/
   # https://github.com/ethpandaops/ethereum-package/tree/main?tab=readme-ov-file#configuration
   l1_additional_services: [
     # blockscout, # block explorer

@@ -91,7 +91,7 @@ Outputs = ["stderr"]
 # ------------------------------------------------------------------------------
 # URL should be used to configure your L1 RPC address.
 # ------------------------------------------------------------------------------
-URL = "{{.l1_rpc_url}}"
+URL = "{{.l1_rpc_url.node_config_toml}}"
 
 # ------------------------------------------------------------------------------
 # ForkIDChunkSize is used to configure how big a rang of blocks can be
