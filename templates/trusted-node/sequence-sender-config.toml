@@ -16,7 +16,7 @@ MaxPendingTx = 1
 	[SequenceSender.StreamClient]
 		Server = "{{.sequencer_name}}{{.deployment_suffix}}:{{.zkevm_data_streamer_port}}"
 	[SequenceSender.EthTxManager]
-		FrequencyToMonitorTxs = "1s"
+		FrequencyToMonitorTxs = "{{.sequencer.frequency_to_monitor_txs}}"
 		WaitTxToBeMined = "2m"
 		ConsolidationL1ConfirmationBlocks = 5
 		FinalizationL1ConfirmationBlocks = 10

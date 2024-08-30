@@ -911,7 +911,7 @@ BatchMaxDeltaTimestamp = "5s"
 # ------------------------------------------------------------------------------
 # L2BlockMaxDeltaTimestamp is used to set the L2 block interval.
 # ------------------------------------------------------------------------------
-L2BlockMaxDeltaTimestamp = "30s"
+L2BlockMaxDeltaTimestamp = "{{.sequencer.l2_block_max_delta_timestamp}}"
 
 # ------------------------------------------------------------------------------
 # HaltOnBatchNumber is used to stop the sequencer once it hits a

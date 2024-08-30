@@ -122,11 +122,19 @@ args:
   l1_preallocated_mnemonic: grocery cruise dance huge gentle punch obscure cook offer pet exhibit weather
   l1_funding_amount: 0.003ether
   l1_rpc_url:
-    bridge_config_toml: https://ethereum-sepolia-rpc.publicnode.com/
-    agglayer_config_toml: https://ethereum-sepolia-rpc.publicnode.com/
+    bridge_config_toml: https://ethereum-sepolia.blockpi.network/v1/rpc/public
+    agglayer_config_toml: https://sepolia.infura.io/v3/e2a47e1289354cc9976ce8aea2caa19c
     dac_config_toml: https://ethereum-sepolia-rpc.publicnode.com/
-    node_config_toml: https://ethereum-sepolia-rpc.publicnode.com/
-    sequence_sender_config_toml: https://ethereum-sepolia-rpc.publicnode.com/
+    node_config_toml: https://sepolia.infura.io/v3/e2a47e1289354cc9976ce8aea2caa19c
+    sequence_sender_config_toml: https://sepolia.infura.io/v3/e2a47e1289354cc9976ce8aea2caa19c
+  sequencer:
+    l2_block_max_delta_timestamp: 10s
+    wait_period_send_sequence: 1m
+    last_batch_virtualization_time_max_wait_period: 30m
+    l1_block_timestamp_margin: 1m
+    frequency_to_monitor_txs: 15s
+    max_batches_for_l1: 500
+
   l1_ws_url:
     dac_config_toml: wss://ethereum-sepolia-rpc.publicnode.com/
   # https://github.com/ethpandaops/ethereum-package/tree/main?tab=readme-ov-file#configuration
