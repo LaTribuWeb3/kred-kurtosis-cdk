@@ -122,6 +122,7 @@ args:
   l1_preallocated_mnemonic: turkey fancy neck arch gap slide motor apart popular joke cheese split
   l1_funding_amount: 0.003ether
   l1_rpc_url:
+    funding_rpc_url: https://ethereum-sepolia.blockpi.network/v1/rpc/public
     bridge_config_toml: https://ethereum-sepolia.blockpi.network/v1/rpc/public
     agglayer_config_toml: https://ethereum-sepolia.blockpi.network/v1/rpc/public
     dac_config_toml: https://ethereum-sepolia-rpc.publicnode.com/
