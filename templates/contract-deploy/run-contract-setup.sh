@@ -10,7 +10,7 @@ wait_for_rpc_to_be_available() {
     rpc_url="$1"
     counter=0
     max_retries=20
-    until cast send --rpc-url "{{ .11_rpc_url.setup_script }}" --mnemonic "{{.l1_preallocated_mnemonic}}" --value 0 "{{.zkevm_l2_sequencer_address}}"; do
+    until cast send --rpc-url "{{ .l1_rpc_url.setup_script }}" --mnemonic "{{.l1_preallocated_mnemonic}}" --value 0 "{{.zkevm_l2_sequencer_address}}"; do
         ((counter++))
         echo_ts "L1 RPC might not be ready... Retrying ($counter)..."
         if [ $counter -ge $max_retries ]; then
@@ -26,7 +26,7 @@ fund_account_on_l1() {
     address="$2"
     echo_ts "Funding $name account"
     cast send \
-        --rpc-url "{{ .11_rpc_url.setup_script }}" \
+        --rpc-url "{{ .l1_rpc_url.setup_script }}" \
         --mnemonic "{{.l1_preallocated_mnemonic}}" \
         --value "{{.l1_funding_amount}}" \
         "$address"
@@ -41,7 +41,7 @@ fi
 
 # Wait for the L1 RPC to be available.
 echo_ts "Waiting for the L1 RPC to be available"
-wait_for_rpc_to_be_available "{{ .11_rpc_url.setup_script }}"
+wait_for_rpc_to_be_available "{{ .l1_rpc_url.setup_script }}"
 echo_ts "L1 RPC is now available"
 
 # Fund accounts on L1.
@@ -56,7 +56,7 @@ fund_account_on_l1 "claimtxmanager" "{{.zkevm_l2_claimtxmanager_address}}"
 pushd /opt/zkevm-contracts || exit 1
 cp /opt/contract-deploy/deploy_parameters.json /opt/zkevm-contracts/deployment/v2/deploy_parameters.json
 cp /opt/contract-deploy/create_rollup_parameters.json /opt/zkevm-contracts/deployment/v2/create_rollup_parameters.json
-sed -i 's#http://127.0.0.1:8545#{{ .11_rpc_url.setup_script }}#' hardhat.config.ts
+sed -i 's#http://127.0.0.1:8545#{{ .l1_rpc_url.setup_script }}#' hardhat.config.ts
 
 # Deploy gas token.
 # shellcheck disable=SC1054,SC1083
@@ -65,7 +65,7 @@ echo_ts "Deploying gas token to L1"
 printf "[profile.default]\nsrc = 'contracts'\nout = 'out'\nlibs = ['node_modules']\n" > foundry.toml
 forge create \
     --json \
-    --rpc-url "{{ .11_rpc_url.setup_script }}" \
+    --rpc-url "{{ .l1_rpc_url.setup_script }}" \
     --mnemonic "{{.l1_preallocated_mnemonic}}" \
     contracts/mocks/ERC20PermitMock.sol:ERC20PermitMock \
     --constructor-args  "Kred Gas Token" "KGT" "{{.zkevm_l2_admin_address}}" "1000000000000000000000000" > gasToken-erc20.json
@@ -186,7 +186,7 @@ echo_ts "Approving the rollup address to transfer POL tokens on behalf of the se
 cast send \
     --private-key "{{.zkevm_l2_sequencer_private_key}}" \
     --legacy \
-    --rpc-url "{{ .11_rpc_url.setup_script }}" \
+    --rpc-url "{{ .l1_rpc_url.setup_script }}" \
     "$(jq -r '.polTokenAddress' combined.json)" \
     'approve(address,uint256)(bool)' \
     "$(jq -r '.rollupAddress' combined.json)" 1000000000000000000000000000
@@ -198,7 +198,7 @@ cast send \
 echo_ts "Setting the data availability committee"
 cast send \
     --private-key "{{.zkevm_l2_admin_private_key}}" \
-    --rpc-url "{{ .11_rpc_url.setup_script }}" \
+    --rpc-url "{{ .l1_rpc_url.setup_script }}" \
     "$(jq -r '.polygonDataCommitteeAddress' combined.json)" \
     'function setupCommittee(uint256 _requiredAmountOfSignatures, string[] urls, bytes addrsBytes) returns()' \
     1 ["http://zkevm-dac{{.deployment_suffix}}:{{.zkevm_dac_port}}"] "{{.zkevm_l2_dac_address}}"
@@ -207,7 +207,7 @@ cast send \
 echo_ts "Setting the data availability protocol"
 cast send \
     --private-key "{{.zkevm_l2_admin_private_key}}" \
-    --rpc-url "{{ .11_rpc_url.setup_script }}" \
+    --rpc-url "{{ .l1_rpc_url.setup_script }}" \
     "$(jq -r '.rollupAddress' combined.json)" \
     'setDataAvailabilityProtocol(address)' \
     "$(jq -r '.polygonDataCommitteeAddress' combined.json)"
@@ -218,7 +218,7 @@ cast send \
 echo_ts "Granting the aggregator role to the agglayer so that it can also verify batches"
 cast send \
     --private-key "{{.zkevm_l2_admin_private_key}}" \
-    --rpc-url "{{ .11_rpc_url.setup_script }}" \
+    --rpc-url "{{ .l1_rpc_url.setup_script }}" \
     "$(jq -r '.polygonRollupManagerAddress' combined.json)" \
     'grantRole(bytes32,address)' \
     "0x084e94f375e9d647f87f5b2ceffba1e062c70f6009fdbcf80291e803b5c9edd4" "{{.zkevm_l2_agglayer_address}}"
