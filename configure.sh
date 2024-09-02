@@ -48,7 +48,10 @@ if ! command -v go >/dev/null 2>&1; then
   echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
 
   # Verify Go installation
-  go version
+  if ! command -v go >/dev/null 2>&1; then
+    echo "Go installation failed or Go is not found in the PATH."
+    exit 1
+  fi
 fi
 
 if ! command -v polycli >/dev/null 2>&1; then
