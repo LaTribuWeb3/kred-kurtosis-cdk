@@ -40,7 +40,7 @@ async function gatherAllEth() {
             gasPrice: gasPrice
           });
           
-          console.log(`Sent ${ethers.utils.formatEther(amountToSend)} ETH from ${wallet.address} to ${destinationWallet}`);
+          console.log(`Sent ${ethers.formatEther(amountToSend)} ETH from ${wallet.address} to ${destinationWallet}`);
           console.log(`Transaction hash: ${tx.hash}`);
           
           await tx.wait();
