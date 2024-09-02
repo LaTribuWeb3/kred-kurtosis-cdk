@@ -63,3 +63,35 @@ if ! command -v polycli >/dev/null 2>&1; then
 
   ln -s $HOME/go/bin/polycli /usr/local/bin/polycli
 fi
+
+# Check if nvm is installed
+if [ ! -d "$HOME/.nvm" ]; then
+  # Install nvm
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+
+  # Load nvm
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+  # Verify nvm installation
+  if ! command -v nvm >/dev/null 2>&1; then
+    echo "nvm installation failed or nvm is not found in the PATH."
+    exit 1
+  fi
+fi
+
+# Check if Node.js is installed
+if ! command -v node >/dev/null 2>&1; then
+  # Load nvm
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+  # Install the latest LTS version of Node.js
+  nvm install --lts
+
+  # Verify Node.js installation
+  if ! command -v node >/dev/null 2>&1; then
+    echo "Node.js installation failed or Node.js is not found in the PATH."
+    exit 1
+  fi
+fi
