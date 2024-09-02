@@ -1,3 +1,8 @@
+# Set software versions
+GO_VERSION="1.21.6"
+NVM_VERSION="0.40.1"
+NODE_VERSION="20.17.0"
+
 # Check if ca-certificates and curl are installed
 if ! dpkg -s ca-certificates curl make wget >/dev/null 2>&1; then
   sudo apt-get update
@@ -42,8 +47,8 @@ fi
 
 if ! command -v go >/dev/null 2>&1; then
   # Install Go
-  wget https://go.dev/dl/go1.21.6.linux-amd64.tar.gz
-  rm -rf /usr/local/go && tar -C /usr/local -xzf go1.21.6.linux-amd64.tar.gz
+  wget https://go.dev/dl/go${GO_VERSION}.linux-amd64.tar.gz
+  rm -rf /usr/local/go && tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz
   export PATH=$PATH:/usr/local/go/bin
   echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
 
@@ -67,7 +72,7 @@ fi
 # Check if nvm is installed
 if [ ! -d "$HOME/.nvm" ]; then
   # Install nvm
-  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v${NVM_VERSION}/install.sh | bash
 
   # Load nvm
   export NVM_DIR="$HOME/.nvm"
@@ -87,7 +92,7 @@ if ! command -v node >/dev/null 2>&1; then
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
   # Install the latest LTS version of Node.js
-  nvm install --lts
+  nvm install ${NODE_VERSION}
 
   # Verify Node.js installation
   if ! command -v node >/dev/null 2>&1; then
