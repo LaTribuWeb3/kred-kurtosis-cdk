@@ -60,5 +60,6 @@ if ! command -v polycli >/dev/null 2>&1; then
   cd polygon-cli
 
   make install
-  export PATH="$HOME/go/bin:$PATH"
+
+  ln -s $HOME/go/bin/polycli /usr/local/bin/polycli
 fi
