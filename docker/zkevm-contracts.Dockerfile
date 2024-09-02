@@ -1,4 +1,4 @@
-# RUN WITH 'docker build . --tag zkevm-contracts:fork9 --build-arg ZKEVM_CONTRACTS_BRANCH=replace-v2 --build-arg POLYCLI_VERSION=main --file zkevm-contracts.Dockerfile'
+# RUN WITH 'docker build --no-cache . --tag zkevm-contracts:fork9 --build-arg ZKEVM_CONTRACTS_BRANCH=replace-v2 --build-arg POLYCLI_VERSION=main --file zkevm-contracts.Dockerfile'
 # TO PUBLISH, FIRST RETAG: docker tag <IMAGE_ID> <DOCKER HUB ID>/zkevm-contracts:fork9
 # THEN PUSH: docker push <DOCKER HUB ID>/zkevm-contracts:fork9
 
