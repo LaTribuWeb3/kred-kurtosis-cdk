@@ -45,6 +45,23 @@ if ! command -v kurtosis >/dev/null 2>&1; then
   sudo apt-get install -y kurtosis-cli
 fi
 
+# Check if gcc is installed
+if ! command -v gcc >/dev/null 2>&1; then
+  echo "gcc is not installed. Installing gcc..."
+  sudo apt-get update
+  sudo apt-get install -y gcc
+
+  # Verify gcc installation
+  if ! command -v gcc >/dev/null 2>&1; then
+    echo "gcc installation failed or gcc is not found in the PATH."
+    exit 1
+  else
+    echo "gcc has been successfully installed."
+  fi
+else
+  echo "gcc is already installed."
+fi
+
 if ! command -v go >/dev/null 2>&1; then
   # Install Go
   wget https://go.dev/dl/go${GO_VERSION}.linux-amd64.tar.gz
@@ -99,23 +116,6 @@ if ! command -v node >/dev/null 2>&1; then
     echo "Node.js installation failed or Node.js is not found in the PATH."
     exit 1
   fi
-fi
-
-# Check if gcc is installed
-if ! command -v gcc >/dev/null 2>&1; then
-  echo "gcc is not installed. Installing gcc..."
-  sudo apt-get update
-  sudo apt-get install -y gcc
-
-  # Verify gcc installation
-  if ! command -v gcc >/dev/null 2>&1; then
-    echo "gcc installation failed or gcc is not found in the PATH."
-    exit 1
-  else
-    echo "gcc has been successfully installed."
-  fi
-else
-  echo "gcc is already installed."
 fi
 
 
