@@ -30,7 +30,7 @@ async function sendEthToAddresses() {
     try {
       const tx = await wallet.sendTransaction({
         to: address,
-        value: ethers.utils.parseEther('0.5')
+        value: ethers.parseEther('0.5')
       });
       
       console.log(`Sent 0.5 ETH to ${address}`);
