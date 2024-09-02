@@ -15,7 +15,7 @@ async function sendEthToAddresses() {
   const params = yaml.load(paramsFile);
 
   // Connect to the network (assuming it's the network specified in params.yml)
-  const provider = new ethers.providers.JsonRpcProvider(params.args.l1_rpc_url);
+  const provider = new ethers.JsonRpcProvider(params.args.l1_rpc_url);
 
   // Create a wallet using the provided private key
   const wallet = new ethers.Wallet(process.env.INIT_PRIVATE_KEY, provider);
