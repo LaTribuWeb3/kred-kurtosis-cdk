@@ -6,7 +6,7 @@ zkevm.l2-chain-id: {{.zkevm_rollup_chain_id}}
 zkevm.l2-sequencer-rpc-url: {{.zkevm_sequencer_url}}
 zkevm.l2-datastreamer-url: {{.zkevm_datastreamer_url}}
 zkevm.l1-chain-id: {{.l1_chain_id}}
-zkevm.l1-rpc-url: {{.l1_rpc_url}}
+zkevm.l1-rpc-url: {{.l1_rpc_url.erigon_config_toml}}
 
 zkevm.address-sequencer: "{{.zkevm_l2_sequencer_address}}"
 zkevm.address-zkevm: "{{.zkevm_rollup_address}}"

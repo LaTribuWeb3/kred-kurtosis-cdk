@@ -14,7 +14,7 @@ zkevm_l2_network="1"
 
 # Functions for deploying an ERC20 contract on LX.
 deploy_erc20_contract_on_l1() {
-  deploy_erc20_contract "$ethereum_network" "{{.l1_rpc_url}}"
+  deploy_erc20_contract "$ethereum_network" "{{.l1_rpc_url.bridge}}"
 }
 
 deploy_erc20_contract_on_l2() {
@@ -62,9 +62,9 @@ get_erc20_balance_on_lx() {
 # Functions for bridging assets from LX to LY.
 bridge_assets_from_l1_to_l2() {
   erc20_address="$(jq -r '.contractAddress' /opt/erc20-network-${ethereum_network}-deployment-receipt.json)"
-  get_erc20_balance_on_lx "$ethereum_network" "{{.l1_rpc_url}}" "$erc20_address"
-  bridge_assets_from_lx_to_ly "$ethereum_network" "$zkevm_l2_network" "{{.l1_rpc_url}}" "$erc20_address"
-  get_erc20_balance_on_lx "$ethereum_network" "{{.l1_rpc_url}}" "$erc20_address"
+  get_erc20_balance_on_lx "$ethereum_network" "{{.l1_rpc_url.bridge}}" "$erc20_address"
+  bridge_assets_from_lx_to_ly "$ethereum_network" "$zkevm_l2_network" "{{.l1_rpc_url.bridge}}" "$erc20_address"
+  get_erc20_balance_on_lx "$ethereum_network" "{{.l1_rpc_url.bridge}}" "$erc20_address"
 }
 
 bridge_assets_from_l2_to_l1() {
@@ -99,9 +99,9 @@ bridge_assets_from_lx_to_ly() {
 # Functions for claiming assets on LX.
 claim_assets_on_l1() {
   erc20_address="$(jq -r '.contractAddress' /opt/erc20-network-${zkevm_l2_network}-deployment-receipt.json)"
-  get_erc20_balance_on_lx "$ethereum_network" "{{.l1_rpc_url}}" "$erc20_address"
-  claim_assets "$ethereum_network" "{{.l1_rpc_url}}"
-  get_erc20_balance_on_lx "$ethereum_network" "{{.l1_rpc_url}}" "$erc20_address"
+  get_erc20_balance_on_lx "$ethereum_network" "{{.l1_rpc_url.bridge}}" "$erc20_address"
+  claim_assets "$ethereum_network" "{{.l1_rpc_url.bridge}}"
+  get_erc20_balance_on_lx "$ethereum_network" "{{.l1_rpc_url.bridge}}" "$erc20_address"
 }
 
 claim_assets_on_l2() {

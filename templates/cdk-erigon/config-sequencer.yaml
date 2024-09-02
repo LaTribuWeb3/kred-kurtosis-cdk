@@ -4,7 +4,7 @@ http: true
 private.api.addr: localhost:9092
 zkevm.l2-chain-id: {{.zkevm_rollup_chain_id}}
 zkevm.l1-chain-id: {{.l1_chain_id}}
-zkevm.l1-rpc-url: {{.l1_rpc_url}}
+zkevm.l1-rpc-url: {{.l1_rpc_url.sequence_sender_config_toml}}
 
 zkevm.address-sequencer: "{{.zkevm_l2_sequencer_address}}"
 zkevm.address-zkevm: "{{.zkevm_rollup_address}}"

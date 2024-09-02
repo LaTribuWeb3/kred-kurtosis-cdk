@@ -85,7 +85,7 @@ providers:
   # differences in the ABIs among versions.
   rpc:
     - name: "L1"
-      url: "{{.l1_rpc_url}}"
+      url: "{{.l1_rpc_url.panoptichain_config_toml}}"
       label: "L1"
       contracts:
         rollup_manager_address: "{{.zkevm_rollup_manager_address}}"
