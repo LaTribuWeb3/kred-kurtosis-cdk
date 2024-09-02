@@ -1,7 +1,7 @@
 # Check if ca-certificates and curl are installed
-if ! dpkg -s ca-certificates curl make >/dev/null 2>&1; then
+if ! dpkg -s ca-certificates curl make wget >/dev/null 2>&1; then
   sudo apt-get update
-  sudo apt-get install -y ca-certificates curl make
+  sudo apt-get install -y ca-certificates curl make wget
 fi
 
 # Check if jq is installed
@@ -42,9 +42,6 @@ fi
 
 if ! command -v go >/dev/null 2>&1; then
   # Install Go
-  apt update
-  apt install -y wget
-
   wget https://go.dev/dl/go1.21.6.linux-amd64.tar.gz
   rm -rf /usr/local/go && tar -C /usr/local -xzf go1.21.6.linux-amd64.tar.gz
   export PATH=$PATH:/usr/local/go/bin
