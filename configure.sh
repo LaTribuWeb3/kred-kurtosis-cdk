@@ -1,9 +1,14 @@
-# Add Docker's official GPG key:
-sudo apt-get update
-sudo apt-get install ca-certificates curl
+# Check if ca-certificates and curl are installed
+if ! dpkg -s ca-certificates curl >/dev/null 2>&1; then
+  sudo apt-get update
+  sudo apt-get install -y ca-certificates curl
+fi
 
-if [ ! -f /etc/apt/keyrings/docker.asc ]; then
+# Create the keyrings directory if it doesn't exist
 sudo install -m 0755 -d /etc/apt/keyrings
+
+# Check if docker.asc already exists before downloading
+if [ ! -f /etc/apt/keyrings/docker.asc ]; then
   sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
   sudo chmod a+r /etc/apt/keyrings/docker.asc
 fi
@@ -16,6 +21,16 @@ if ! grep -q "deb \[arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyring
     sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 fi
 
-sudo apt-get update
+# Check if Docker is installed
+if ! command -v docker >/dev/null 2>&1; then
+  sudo apt-get update
+  sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+fi
 
-sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+# Check if Kurtosis is installed
+if ! command -v kurtosis >/dev/null 2>&1; then
+  echo "deb [trusted=yes] https://apt.fury.io/kurtosis-tech/ /" | sudo tee /etc/apt/sources.list.d/kurtosis.list
+  sudo apt-get update
+  sudo apt-get install -y kurtosis-cli
+fi
+
