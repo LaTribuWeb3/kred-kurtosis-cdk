@@ -1045,7 +1045,7 @@ Level = "info"
 # we checked. E.g. if we query and find 0 sequences to send, we'll
 # wait for WaitPeriodSendSequence before checking again
 # ------------------------------------------------------------------------------
-WaitPeriodSendSequence = "1m"
+WaitPeriodSendSequence = "{{.sequencer.wait_period_send_sequence}}"
 
 # ------------------------------------------------------------------------------
 # LastBatchVirtualizationTimeMaxWaitPeriod defines the max amount of
@@ -1054,7 +1054,7 @@ WaitPeriodSendSequence = "1m"
 # LastBatchVirtualizationTimeMaxWaitPeriod since the last time we've
 # virtualized, we'll send the sequences. Otherwise we'll wait longer.
 # ------------------------------------------------------------------------------
-LastBatchVirtualizationTimeMaxWaitPeriod = "30m"
+LastBatchVirtualizationTimeMaxWaitPeriod = "{{.sequencer.last_batch_virtualization_time_max_wait_period}}"
 
 # ------------------------------------------------------------------------------
 # L1BlockTimestampMargin is the duration that must exist between the
@@ -1062,7 +1062,7 @@ LastBatchVirtualizationTimeMaxWaitPeriod = "30m"
 # virtualizing. If the time of the last L1 block and the last L2 block
 # is too close, we'll wait longer before attempting to sequence.
 # ------------------------------------------------------------------------------
-L1BlockTimestampMargin = "1m"
+L1BlockTimestampMargin = "{{.sequencer.l1_block_timestamp_margin}}"
 
 # ------------------------------------------------------------------------------
 # MaxTxSizeForL1 is the maximum size a single transaction can
@@ -1093,7 +1093,7 @@ GasOffset = 150000
 # verified faster, decreasing this number will help ensure that you're
 # sequencing more often.
 # ------------------------------------------------------------------------------
-MaxBatchesForL1 = 20
+MaxBatchesForL1 = {{.sequencer.max_batches_for_l1}}
 
 # ------------------------------------------------------------------------------
 # L2Coinbase should generally be the address of the trusted
