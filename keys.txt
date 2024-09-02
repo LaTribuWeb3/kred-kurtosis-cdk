@@ -1,0 +1,103 @@
+{
+  "RootKey": "xprv9s21ZrQH143K2Si5aGp9tMN9t8EyMcqrfZ8E99hZFiBkbBukFcDnetp5yazZTRnHJxTHvxDpXB89N7kiEHzhoeRvRhqfPdfANetwDGsHzkJ",
+  "Seed": "5cbe7aff96b2f078d27db6c9d7bb2231fd91b9c004b2ad35636908a884c33100fda8df81caf4b66059c5cf7ae87e09d28d56288b2dca8d4191a4c03c3132f993",
+  "Mnemonic": "turkey fancy neck arch gap slide motor apart popular joke cheese split",
+  "DerivationPath": "m/44'/60'/0'",
+  "AccountPublicKey": "xpub6CNuYzsPXBqP8s56qQtAmrfmAk1eUoFECmXTfC8hfCxHdwjdgGg4bZ8sPMahLwt6wkLDiTSLkMTw7QkguZLLV9yJyMyRWZCGAfWhVBFMUNf",
+  "AccountPrivateKey": "xprv9yPZ9VLVgpH5vNzdjPMAQij2ciBA5LXNqYbrroj66sRJm9QV8jMp3kpPY5zVgEie1q4JCAfT7yD5TcxcW26wPRPrb1iBmk6RP1VrQpbQnKL",
+  "BIP32PublicKey": "xpub6En7C3YJENuXGBFZ72H15QLSWwtkSoYse3oGE5c61XRaAj8Nxk8iD3T83LRB3vufyB99co2r2B5nUZWGMLETXJysos1ukuGmiGPrwy6Y1ZH",
+  "BIP32PrivateKey": "xprvA1nknY1QQ1ME3hB5zzjziGPhxv4G3Lq2GpsfRhCUTBtbHvoERCpTfF8eC5bqXeR61Vg9zA5N6Myu1ajRyYq1HjzBCyQwpT2zVHiGkPPY65d",
+  "Addresses": [
+   {
+    "Path": "m/44'/60'/0'/0/0",
+    "HexPublicKey": "03110584e83ef5efa65f6a1b4f9561f921297828ed5488006c7228a4d8de4f3611",
+    "HexFullPublicKey": "110584e83ef5efa65f6a1b4f9561f921297828ed5488006c7228a4d8de4f3611251c717515dd17407ce6d0a122fa7ea7b96beec3040ad4847ad97d23b9184fbf",
+    "ETHCommonAddress": "0x10257617037187c7c12c88b7bf825f867d0dd542",
+    "HexPrivateKey": "77ed6f23304c04d7cee4c0a1a171d9df27732c34d9c1e5b3a990e224dbce21a5",
+    "ETHAddress": "0x10257617037187C7C12C88B7BF825F867d0Dd542",
+    "BTCAddress": "1AW9qiDEPtK17NXy6ZvQ1RY8SRgVvrNVhc",
+    "WIF": "L1EqLb1vgrnKxXYHBmzkkFLQML21v2JKLuUxZMJuunXqNYrHRa2i"
+   },
+   {
+    "Path": "m/44'/60'/0'/0/1",
+    "HexPublicKey": "03212d6b34dbd6c251d949a8e176cb957f8536aacf8c24aff7c6de9241526b0d16",
+    "HexFullPublicKey": "212d6b34dbd6c251d949a8e176cb957f8536aacf8c24aff7c6de9241526b0d16e265dda3250d9307602307ea5f35030cd41e618a8804f672807957544520e945",
+    "ETHCommonAddress": "0x4cd79cce495172dd95c7836a16de6cada6d44193",
+    "HexPrivateKey": "6d5c4aa232557feb8b08d7689f4cb3a5e6dd1ca118f51f3c5374d7caa89346a4",
+    "ETHAddress": "0x4CD79CCe495172Dd95c7836a16De6CaDA6D44193",
+    "BTCAddress": "1F8Fq5e1XZNX3F4cUe8mycicHpgkuG5dry",
+    "WIF": "KztHyMH8Yvnm1KQkufWEsfFQKYQ4AJVwu9A1RgUP7TYcU63s4bY9"
+   },
+   {
+    "Path": "m/44'/60'/0'/0/2",
+    "HexPublicKey": "02811c20bda82b05ee5efb44c3b5b2d829389d4a8c67dd31c36b98bab79438c9c8",
+    "HexFullPublicKey": "811c20bda82b05ee5efb44c3b5b2d829389d4a8c67dd31c36b98bab79438c9c886b889c7a51c67a1f4dc99a7c2154fbd4ab747600fd21679a3fd6f7929706e12",
+    "ETHCommonAddress": "0xf802c4e7570b461fae822feb716c5d0d6543f820",
+    "HexPrivateKey": "11e2a84d72d98bd13db63d0b5bf5ece544bb0ca7c9b27509b642de3d8a5ab48c",
+    "ETHAddress": "0xf802C4e7570b461Fae822fEb716C5D0D6543F820",
+    "BTCAddress": "1BrAeNak3DDnvTaFrAjMXjrBXhWprVsZhx",
+    "WIF": "KwpUfKLe45UGqnLhhieH4R7aR99kFEAt1CccgKrbteq81ah5KsFw"
+   },
+   {
+    "Path": "m/44'/60'/0'/0/3",
+    "HexPublicKey": "0201ad231b95cd46cc6cd731b135952d4da46f760f61d8a36facd25c9600071be3",
+    "HexFullPublicKey": "01ad231b95cd46cc6cd731b135952d4da46f760f61d8a36facd25c9600071be323a17c7195c7b7b7930a7f0e791f761b3b5c873f735efda038d7835561a7892e",
+    "ETHCommonAddress": "0xd5e0eb4e6362ba6dc8dd1f1a7a48087b03927b7a",
+    "HexPrivateKey": "e6a5e04f7a755d98fbb41aa9c1bd3020b11d52c7e1b10a0964e15db7f30b0466",
+    "ETHAddress": "0xD5e0eB4E6362BA6Dc8dd1F1a7a48087b03927B7A",
+    "BTCAddress": "1PrTZEjjzcVBSsHjd9Gx3EdRDGV1GAMPiR",
+    "WIF": "L4x4TKQ5CG1xYvq4pJAHZWzhjevP2SUWUYSj7KkuWLnq34Ba1fjm"
+   },
+   {
+    "Path": "m/44'/60'/0'/0/4",
+    "HexPublicKey": "02bfbcb5e4a6a4205cba0eb4ab58eb072ce7bc584015739c1a55c3c472a3f3c622",
+    "HexFullPublicKey": "bfbcb5e4a6a4205cba0eb4ab58eb072ce7bc584015739c1a55c3c472a3f3c622657b3bcc2807ec1c4ca9ed81fc64864f484ad39b0543fbb48f0b4552604a3da8",
+    "ETHCommonAddress": "0xda844ac52b097953b784c22e99d9e9ab7cc5a931",
+    "HexPrivateKey": "a5994f8e20a987eae74b6abdb1188c84e3ee7e86620cb20b6571c3192a5843d3",
+    "ETHAddress": "0xDA844AC52b097953B784c22e99D9E9AB7CC5A931",
+    "BTCAddress": "1EF7rG7u4cQnAYUjEhF8XT2oWvTWzSgqta",
+    "WIF": "L2mcXtD1v7ziVyHkmhnGiPe3v3E9kxRxgeR2D1P47gRr4gkQNe7k"
+   },
+   {
+    "Path": "m/44'/60'/0'/0/5",
+    "HexPublicKey": "03eb57f64b2cffd4b9dd57cbbe308432395c3741e673ac1965841290863effa714",
+    "HexFullPublicKey": "eb57f64b2cffd4b9dd57cbbe308432395c3741e673ac1965841290863effa714e3b1f266f3b85149f9584ba233ca38d6ca50ae111965a8d501135910871631a3",
+    "ETHCommonAddress": "0x7c4f55bf6fb634ddf2bf41fb8075fbd84e78196f",
+    "HexPrivateKey": "4b097ad4d2a713cae867ad0129c664abcc62c3b3428ad22964374f565fef5445",
+    "ETHAddress": "0x7C4F55bF6fb634ddf2BF41Fb8075fbd84E78196F",
+    "BTCAddress": "1LoYytSU61mHVRSrFD5EB1HhC1RCdcdNSH",
+    "WIF": "KyjaC3A7cfFWxHKSRmKoUKWYZaDuvc3PPT7uujZHMg3wbLW5EtLs"
+   },
+   {
+    "Path": "m/44'/60'/0'/0/6",
+    "HexPublicKey": "02aa7ec1da61661637355a65c8405a9ba171031a10660eb1d00e4984f01d25690c",
+    "HexFullPublicKey": "aa7ec1da61661637355a65c8405a9ba171031a10660eb1d00e4984f01d25690c72216fcafadd14e8b6d28cf0a6bf18a19f5ef84a13cba4df2488f2416dfa18c6",
+    "ETHCommonAddress": "0x67651cf8f96fa7dc1fa74853e3934911c6175b47",
+    "HexPrivateKey": "4b21080ba07e87f32eaec011d1a2be6617a4479ad19213799b2ac6a5b6c765dd",
+    "ETHAddress": "0x67651cF8F96Fa7dc1fa74853E3934911c6175b47",
+    "BTCAddress": "1DicsAqw7etbPuVQ1Y85RCndsjGz5Y9ZBE",
+    "WIF": "KyjkZddskY5BpPJCJDq1AxhEu37c7DgGoXAobgHXoN3HUVzqMrms"
+   },
+   {
+    "Path": "m/44'/60'/0'/0/7",
+    "HexPublicKey": "0264be1549e89b1041336c886f67675fb8732d51e78191e8ac7958325242063a62",
+    "HexFullPublicKey": "64be1549e89b1041336c886f67675fb8732d51e78191e8ac7958325242063a62fbaf90e8dd3da31e22887412eb2caa78b77714606ac40e0538d42022da827a6e",
+    "ETHCommonAddress": "0x987cfef534df1f009a00ecffea7265212c062e09",
+    "HexPrivateKey": "fcb8e64ab0544ed2662ce8ee918666b70615b642bd04d88eb2876ff69b65a205",
+    "ETHAddress": "0x987cfef534Df1f009a00EcfFEA7265212c062e09",
+    "BTCAddress": "12A2ZdNTrY6nhg1QopSDoqq3gvDeWw7obG",
+    "WIF": "L5gyD8E4UnoQQXU4eYJmsGZbj7FSzjYSBQNdcqe5YpQGaoGmF7hE"
+   },
+   {
+    "Path": "m/44'/60'/0'/0/8",
+    "HexPublicKey": "03ca043a48e81e04e3c8b84566076552839c3555047f3ccf2557f225af24f33c21",
+    "HexFullPublicKey": "ca043a48e81e04e3c8b84566076552839c3555047f3ccf2557f225af24f33c21faac23944f028071a1973c2b572cd997574ac6f0b5d86fd1eb5518004a6eff07",
+    "ETHCommonAddress": "0xa0087b6bc193b9a72ec38361594f1eeed2a1f4f9",
+    "HexPrivateKey": "6e2781fec3893e29675f61d7a46b6434def67c45c72abfd52578b2ff61514379",
+    "ETHAddress": "0xa0087b6bC193b9A72ec38361594F1EeEd2a1f4F9",
+    "BTCAddress": "1Q1BhkmX9SZakpwY8U9XWDKLPv8xWBrsnQ",
+    "WIF": "KzuqUEhPDuU5ZDnWKPGkqhYb9jLCnXF1eVC5foVHsVduUTq4Aaub"
+   }
+  ],
+  "ETHCommonAddress": "0x0000000000000000000000000000000000000000"
+ }
