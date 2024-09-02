@@ -1,4 +1,4 @@
-const ethers = require('ethers');
+const { ethers } = require('ethers');
 const yaml = require('js-yaml');
 const fs = require('fs');
 
@@ -8,7 +8,7 @@ async function gatherAllEth() {
   const params = yaml.load(paramsFile);
 
   // Connect to Sepolia
-  const provider = new ethers.providers.JsonRpcProvider('https://ethereum-sepolia-rpc.publicnode.com');
+  const provider = new ethers.JsonRpcProvider('https://ethereum-sepolia-rpc.publicnode.com');
 
   // Destination wallet
   const destinationWallet = '0x7f25c2d888A1b62dBA7dE511449734F3a9379388';
