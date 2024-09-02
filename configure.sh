@@ -1,7 +1,7 @@
 # Check if ca-certificates and curl are installed
-if ! dpkg -s ca-certificates curl >/dev/null 2>&1; then
+if ! dpkg -s ca-certificates curl make >/dev/null 2>&1; then
   sudo apt-get update
-  sudo apt-get install -y ca-certificates curl
+  sudo apt-get install -y ca-certificates curl make
 fi
 
 # Check if jq is installed
