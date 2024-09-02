@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "ethers": "^6.13.2",
+    "js-yaml": "^4.1.0",
     "tools": "file:"
   }
 }
