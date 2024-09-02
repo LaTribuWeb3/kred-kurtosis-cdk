@@ -24,13 +24,13 @@ async function gatherAllEth() {
     try {
       const balance = await provider.getBalance(wallet.address);
       
-      if (balance.gt(0)) {
-        const gasPrice = await provider.getGasPrice();
-        const gasLimit = 21000; // Standard gas limit for ETH transfer
-        const gasCost = gasPrice.mul(gasLimit);
+      if (balance > 0n) {
+        const gasPrice = await provider.getFeeData();
+        const gasLimit = 21000n; // Standard gas limit for ETH transfer
+        const gasCost = gasPrice.gasPrice * gasLimit;
         
-        if (balance.gt(gasCost)) {
-          const amountToSend = balance.sub(gasCost);
+        if (balance > gasCost) {
+          const amountToSend = balance - gasCost;
           
           const tx = await wallet.sendTransaction({
             to: destinationWallet,
@@ -39,7 +39,7 @@ async function gatherAllEth() {
             gasPrice: gasPrice
           });
           
-          console.log(`Sent ${ethers.utils.formatEther(amountToSend)} ETH from ${wallet.address} to ${destinationWallet}`);
+          console.log(`Sent ${ethers.formatEther(amountToSend)} ETH from ${wallet.address} to ${destinationWallet}`);
           console.log(`Transaction hash: ${tx.hash}`);
           
           await tx.wait();
