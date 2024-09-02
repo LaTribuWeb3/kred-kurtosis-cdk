@@ -4,6 +4,12 @@ if ! dpkg -s ca-certificates curl >/dev/null 2>&1; then
   sudo apt-get install -y ca-certificates curl
 fi
 
+# Check if jq is installed
+if ! command -v jq >/dev/null 2>&1; then
+  sudo apt-get update
+  sudo apt-get install -y jq
+fi
+
 # Create the keyrings directory if it doesn't exist
 sudo install -m 0755 -d /etc/apt/keyrings
 
@@ -33,3 +39,4 @@ if ! command -v kurtosis >/dev/null 2>&1; then
   sudo apt-get update
   sudo apt-get install -y kurtosis-cli
 fi
+
