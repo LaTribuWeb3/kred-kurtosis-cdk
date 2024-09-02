@@ -87,7 +87,7 @@ args:
   # Addresses and private keys of the different components.
   # They have been generated using the following command:
   # polycli wallet inspect --mnemonic 'sun track south list surface know wheel rug black gravity cloud miracle' --addresses 9 | tee keys.txt | jq -r '.Addresses[] | [.ETHAddress, .HexPrivateKey] | @tsv' | awk 'BEGIN{split("sequencer,aggregator,claimtxmanager,timelock,admin,loadtest,agglayer,dac,proofsigner",roles,",")} {print "zkevm_l2_" roles[NR] "_address: \"" $1 "\""; print "zkevm_l2_" roles[NR] "_private_key: \"0x" $2 "\"\n"}'
-   zkevm_l2_sequencer_address: "0xC3F0Db5de1A060aE2c7b73815b6A94BE6BE1c364"
+  zkevm_l2_sequencer_address: "0xC3F0Db5de1A060aE2c7b73815b6A94BE6BE1c364"
   zkevm_l2_sequencer_private_key: "0x66c890ba26fd3cc775ed23e46015c7b96be602098872b6dc0b5a920b1bafb4d0"
 
   zkevm_l2_aggregator_address: "0x18A09D42E1E128a6429d6d0D124Ac086b4eB6dfc"
