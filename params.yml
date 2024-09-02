@@ -87,32 +87,32 @@ args:
   # Addresses and private keys of the different components.
   # They have been generated using the following command:
   # polycli wallet inspect --mnemonic 'sun track south list surface know wheel rug black gravity cloud miracle' --addresses 9 | tee keys.txt | jq -r '.Addresses[] | [.ETHAddress, .HexPrivateKey] | @tsv' | awk 'BEGIN{split("sequencer,aggregator,claimtxmanager,timelock,admin,loadtest,agglayer,dac,proofsigner",roles,",")} {print "zkevm_l2_" roles[NR] "_address: \"" $1 "\""; print "zkevm_l2_" roles[NR] "_private_key: \"0x" $2 "\"\n"}'
-  zkevm_l2_sequencer_address: "0xC3F0Db5de1A060aE2c7b73815b6A94BE6BE1c364"
-  zkevm_l2_sequencer_private_key: "0x66c890ba26fd3cc775ed23e46015c7b96be602098872b6dc0b5a920b1bafb4d0"
+  zkevm_l2_sequencer_address: "0x10257617037187C7C12C88B7BF825F867d0Dd542"
+  zkevm_l2_sequencer_private_key: "0x77ed6f23304c04d7cee4c0a1a171d9df27732c34d9c1e5b3a990e224dbce21a5"
 
-  zkevm_l2_aggregator_address: "0x18A09D42E1E128a6429d6d0D124Ac086b4eB6dfc"
-  zkevm_l2_aggregator_private_key: "0xa99f4ad54ac3f99d6c638cc3d979a8dde98cb2b5920437bb0b4af60687085b77"
+  zkevm_l2_aggregator_address: "0x4CD79CCe495172Dd95c7836a16De6CaDA6D44193"
+  zkevm_l2_aggregator_private_key: "0x6d5c4aa232557feb8b08d7689f4cb3a5e6dd1ca118f51f3c5374d7caa89346a4"
 
-  zkevm_l2_claimtxmanager_address: "0x8a78e0D1a9cD32Fe7767812F565Cda66F370D255"
-  zkevm_l2_claimtxmanager_private_key: "0x9893637d912b6c8491cf037611af5479b98065619b7c0832d5efcdbb4dac3651"
+  zkevm_l2_claimtxmanager_address: "0xf802C4e7570b461Fae822fEb716C5D0D6543F820"
+  zkevm_l2_claimtxmanager_private_key: "0x11e2a84d72d98bd13db63d0b5bf5ece544bb0ca7c9b27509b642de3d8a5ab48c"
 
-  zkevm_l2_timelock_address: "0x21dB19F61fa3143A70Fd4bA5E273d27F54928dd9"
-  zkevm_l2_timelock_private_key: "0xea0c7210129790206c17811c3ed77bd406d20f6465a1d424a362f684ed944cf1"
+  zkevm_l2_timelock_address: "0xD5e0eB4E6362BA6Dc8dd1F1a7a48087b03927B7A"
+  zkevm_l2_timelock_private_key: "0xe6a5e04f7a755d98fbb41aa9c1bd3020b11d52c7e1b10a0964e15db7f30b0466"
 
-  zkevm_l2_admin_address: "0x07f76d514B967423AabCe9E690F3651Ca2859A44"
-  zkevm_l2_admin_private_key: "0x988c463bea32515ee72fdc8200707bd36a3840ae5c15d3005dfbefb693b32516"
+  zkevm_l2_admin_address: "0xDA844AC52b097953B784c22e99D9E9AB7CC5A931"
+  zkevm_l2_admin_private_key: "0xa5994f8e20a987eae74b6abdb1188c84e3ee7e86620cb20b6571c3192a5843d3" 
 
-  zkevm_l2_loadtest_address: "0xeB656C613274C6E147a70CeFd9d77e1aAA77E96a"
-  zkevm_l2_loadtest_private_key: "0x64f8b7eab58531ee9f1776fee13788538fb4a53482a23ea39e400ca4e146f090"
+  zkevm_l2_loadtest_address: "0x7C4F55bF6fb634ddf2BF41Fb8075fbd84E78196F"
+  zkevm_l2_loadtest_private_key: "0x4b097ad4d2a713cae867ad0129c664abcc62c3b3428ad22964374f565fef5445"
 
-  zkevm_l2_agglayer_address: "0xAdCA60B9C76774F23eC3D222c3E3E04B93D0C5a7"
-  zkevm_l2_agglayer_private_key: "0xcf1cdf6f08da4fb00ba6e6623c719ff8ecd42413fe1d9000d1784d6d01cf937c"
+  zkevm_l2_agglayer_address: "0x67651cF8F96Fa7dc1fa74853E3934911c6175b47"
+  zkevm_l2_agglayer_private_key: "0x4b21080ba07e87f32eaec011d1a2be6617a4479ad19213799b2ac6a5b6c765dd"
 
-  zkevm_l2_dac_address: "0x538fd6439c415497f95f3528DcacFec3Fb0E552a"
-  zkevm_l2_dac_private_key: "0xd65d81bda6e87799c02e162ab7b733374b61444e4a233d6ade56fdf5d01ef549"
+  zkevm_l2_dac_address: "0x987cfef534Df1f009a00EcfFEA7265212c062e09"
+  zkevm_l2_dac_private_key: "0xfcb8e64ab0544ed2662ce8ee918666b70615b642bd04d88eb2876ff69b65a205"   
 
-  zkevm_l2_proofsigner_address: "0x38071bF0D6C73422F0E1A41aFDaf45D18dca7A40"
-  zkevm_l2_proofsigner_private_key: "0x467429d4a0efbd8b5ab43f33ceea8ebc6c38fc789473ba996a54342cb5c39aa7"
+  zkevm_l2_proofsigner_address: "0xa0087b6bC193b9A72ec38361594F1EeEd2a1f4F9"
+  zkevm_l2_proofsigner_private_key: "0x6e2781fec3893e29675f61d7a46b6434def67c45c72abfd52578b2ff61514379"
 
   # Keystore password.
   zkevm_l2_keystore_password: pSnv6Dh5s9ahuzGzH9RoCDrKAMddaX3m
