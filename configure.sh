@@ -118,5 +118,15 @@ if ! command -v node >/dev/null 2>&1; then
   fi
 fi
 
+if [ -d "polygon-cli" ]; then
+  echo "Removing Polygon CLI source directory..."
+  rm -rf polygon-cli
+fi
+
+# Remove go${GO_VERSION}.linux-amd64.tar.gz if it exists
+if [ -f "go${GO_VERSION}.linux-amd64.tar.gz" ]; then
+  echo "Removing go${GO_VERSION}.linux-amd64.tar.gz..."
+  rm go${GO_VERSION}.linux-amd64.tar.gz
+fi
 
 source ~/.bashrc
