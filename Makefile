@@ -1,7 +1,7 @@
-.PHONY: install-kurtosis install-docker
+.PHONY: install-kurtosis install-docker run-kurtosis
 
 # Default target
-install: install-docker install-kurtosis
+all: install-docker install-kurtosis run-kurtosis
 
 # Install Docker
 install-docker:
@@ -35,8 +35,15 @@ install-kurtosis:
 	@echo "Kurtosis installation complete. Version installed:"
 	@kurtosis version
 
+# Run Kurtosis
+run-kurtosis:
+	@echo "Running Kurtosis..."
+	@kurtosis clean --all
+	@kurtosis run --enclave cdk-v1 --args-file params.yml --image-download always .
+
 # Clean up (optional)
 clean:
 	@echo "Cleaning up..."
 	@sudo rm -f /etc/apt/sources.list.d/kurtosis.list
 	@sudo apt update
+	@kurtosis clean --all
