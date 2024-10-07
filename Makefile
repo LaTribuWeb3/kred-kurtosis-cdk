@@ -1,7 +1,26 @@
-.PHONY: install-kurtosis
+.PHONY: install-kurtosis install-docker
 
 # Default target
-all: install-kurtosis
+install: install-docker install-kurtosis
+
+# Install Docker
+install-docker:
+	@echo "Installing Docker..."
+	@if ! command -v docker &> /dev/null; then \
+		sudo apt-get update; \
+		sudo apt-get install -y ca-certificates curl gnupg; \
+		sudo install -m 0755 -d /etc/apt/keyrings; \
+		curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg; \
+		sudo chmod a+r /etc/apt/keyrings/docker.gpg; \
+		echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $$(. /etc/os-release && echo "$$VERSION_CODENAME") stable" | \
+		sudo tee /etc/apt/sources.list.d/docker.list > /dev/null; \
+		sudo apt-get update; \
+		sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin; \
+	else \
+		echo "Docker is already installed."; \
+	fi
+	@echo "Docker installation complete. Version installed:"
+	@docker --version
 
 # Install Kurtosis
 install-kurtosis:
