@@ -25,15 +25,15 @@ async function sendEthToAddresses() {
     .filter(([key, value]) => key.startsWith('zkevm_l2_') && key.endsWith('_address'))
     .map(([_, value]) => value);
 
-  // Send 0.5 ETH to each address
+  // Send 10 ETH to each address
   for (const address of addresses) {
     try {
       const tx = await wallet.sendTransaction({
         to: address,
-        value: ethers.parseEther('0.5')
+        value: ethers.parseEther('10')
       });
       
-      console.log(`Sent 0.5 ETH to ${address}`);
+      console.log(`Sent 10 ETH to ${address}`);
       console.log(`Transaction hash: ${tx.hash}`);
       
       await tx.wait();
