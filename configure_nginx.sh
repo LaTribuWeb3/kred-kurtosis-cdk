@@ -82,6 +82,21 @@ sudo ln -sf "$config_file" /etc/nginx/sites-enabled/
 # Test Nginx configuration
 sudo nginx -t
 
+# Install certbot
+sudo apt-get update
+sudo apt-get install -y certbot python3-certbot-nginx
+
+# Generate SSL certificates for both domains
+sudo certbot --nginx -d $rpc_dns -d $ws_rpc_dns --non-interactive --agree-tos --email admin@example.com
+
+# Ensure the certificates were generated successfully
+if [ $? -eq 0 ]; then
+    echo "SSL certificates have been successfully generated for $rpc_dns and $ws_rpc_dns"
+else
+    echo "Failed to generate SSL certificates. Please check the certbot logs and try again manually."
+    exit 1
+fi
+
 if [ $? -eq 0 ]; then
     echo "Nginx configuration test passed."
     # Reload Nginx to apply changes
