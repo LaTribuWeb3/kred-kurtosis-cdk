@@ -19,7 +19,7 @@ read -p "Enter the DNS for RPC (e.g., rpc.example.com): " rpc_dns
 read -p "Enter the DNS for WS RPC (e.g., ws-rpc.example.com): " ws_rpc_dns
 
 # Create Nginx configuration file
-config_file="/etc/nginx/sites-available/rpc_redirect"
+config_file="/etc/nginx/conf.d/rpc_redirect.conf"
 
 # Find the Docker container exposing port 8123
 container_id=$(docker ps --format '{{.ID}}\t{{.Ports}}' | grep '8123' | awk '{print $1}')
@@ -92,6 +92,7 @@ sudo systemctl stop nginx
 if [ ! -d "/etc/letsencrypt/live/$rpc_dns" ]; then
     sudo certbot certonly --standalone -d $rpc_dns --agree-tos --email olden@la-tribu.xyz
 fi
+
 if [ ! -d "/etc/letsencrypt/live/$ws_rpc_dns" ]; then
     sudo certbot certonly --standalone -d $ws_rpc_dns --agree-tos --email olden@la-tribu.xyz
 fi
