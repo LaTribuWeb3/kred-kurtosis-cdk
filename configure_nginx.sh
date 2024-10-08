@@ -86,8 +86,12 @@ sudo nginx -t
 sudo apt-get update
 sudo apt-get install -y certbot python3-certbot-nginx
 
+sudo systemctl stop nginx
+
 # Generate SSL certificates for both domains
-sudo certbot --nginx -d $rpc_dns -d $ws_rpc_dns --non-interactive --agree-tos --email admin@example.com
+sudo certbot --standalone -d $rpc_dns -d $ws_rpc_dns --non-interactive --agree-tos --email olden@la-tribu.xyz
+
+sudo systemctl start nginx
 
 # Ensure the certificates were generated successfully
 if [ $? -eq 0 ]; then
