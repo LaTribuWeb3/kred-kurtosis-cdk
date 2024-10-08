@@ -1,12 +1,13 @@
-# RUN WITH 'docker build --no-cache . --tag zkevm-contracts:fork9 --build-arg ZKEVM_CONTRACTS_BRANCH=replace-v2 --build-arg POLYCLI_VERSION=main --file zkevm-contracts.Dockerfile'
+# RUN WITH 'docker build --no-cache . --tag alfulinku/zkevm-contracts:fork9 --build-arg ZKEVM_CONTRACTS_BRANCH=replace-v2 --build-arg POLYCLI_VERSION=main --file zkevm-contracts.Dockerfile'
 # TO PUBLISH, FIRST RETAG: docker tag <IMAGE_ID> <DOCKER HUB ID>/zkevm-contracts:fork9
-# THEN PUSH: docker push <DOCKER HUB ID>/zkevm-contracts:fork9
+# THEN PUSH: docker push alfulinku/zkevm-contracts:fork9
 
 FROM golang:1.21 AS polycli-builder
 ARG POLYCLI_VERSION
 WORKDIR /opt/polygon-cli
-RUN git clone --branch ${POLYCLI_VERSION} https://github.com/maticnetwork/polygon-cli.git . \
-  && CGO_ENABLED=0 go build -o polycli main.go
+RUN git clone --branch ${POLYCLI_VERSION} https://github.com/maticnetwork/polygon-cli.git .
+RUN git reset --hard 8c71a3c
+RUN CGO_ENABLED=0 go build -o polycli main.go
 
 
 FROM node:20-bookworm
