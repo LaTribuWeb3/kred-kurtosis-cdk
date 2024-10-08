@@ -89,7 +89,12 @@ sudo apt-get install -y certbot python3-certbot-nginx
 sudo systemctl stop nginx
 
 # Generate SSL certificates for both domains
-sudo certbot certonly --standalone -d $rpc_dns -d $ws_rpc_dns --agree-tos --email olden@la-tribu.xyz
+if [ ! -d "/etc/letsencrypt/live/$rpc_dns" ]; then
+    sudo certbot certonly --standalone -d $rpc_dns --agree-tos --email olden@la-tribu.xyz
+fi
+if [ ! -d "/etc/letsencrypt/live/$ws_rpc_dns" ]; then
+    sudo certbot certonly --standalone -d $ws_rpc_dns --agree-tos --email olden@la-tribu.xyz
+fi
 
 sudo systemctl start nginx
 
